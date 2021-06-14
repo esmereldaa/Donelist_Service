@@ -11,7 +11,7 @@ class CreateDonelistTable extends Migration
         Schema::create('donelist', function (Blueprint $table) {
 
         $table->increments('list_id')->start_from(10);
-		$table->integer('user_id',5)->nullable();
+		$table->foreign('user_id')->references('user_id')->on('user')->onDelete('cascade');
 		$table->string('task_data')->nullable();
 		$table->datetime('date')->nullable();
 

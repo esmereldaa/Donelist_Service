@@ -1,0 +1,46 @@
+-- SQLINES LICENSE FOR EVALUATION USE ONLY
+CREATE TABLE donelist (
+  list_id int NOT NULL,
+  user_id int NOT NULL,
+  task_data varchar(255) NOT NULL,
+  date timestamp(0) NOT NULL
+) ;
+
+INSERT INTO donelist (list_id, user_id, task_data, date) VALUES
+(1, 1, 'creating project', '2021-05-28 14:52:46'),
+(2, 1, 'thing to do', '2021-05-27 13:56:36'),
+(3, 1, 'Test3', '2021-05-28 18:12:27'),
+(4, 1, 'Test4', '2021-05-28 18:14:08'),
+(5, 1, 'Uji Ke 5', '2021-05-28 18:15:30'),
+(6, 5, 'do something', '2021-05-29 04:59:32'),
+(8, 7, 'do something twice', '2021-05-29 07:55:29');
+
+-- SQLINES LICENSE FOR EVALUATION USE ONLY
+CREATE TABLE user (
+  user_id int NOT NULL,
+  token varchar(100) DEFAULT NULL,
+  uname varchar(50) NOT NULL,
+  password varchar(50) NOT NULL,
+  email varchar(100) DEFAULT NULL
+) ;
+
+INSERT INTO user (user_id, token, uname, password, email) VALUES
+(1, 'd947e8d2d34b1df805ec72916ab6cf90', 'Luthfi', 'password21', 'luthfi@mail.com'),
+(4, '66ad6b3d2f2567870b73d5e4c014e947', 'user1', 'qwerty', 'user1@mail.com'),
+(5, 'fd1b0024188835f6c528c23c3abcca9c', 'user2', 'password21', 'user2@mail.com'),
+(6, '04366a4f0df4210be1707b9b48298e43', 'user2', 'password21', 'user2@mail.com'),
+(7, '6f83883f51104340c30c37c4080f59aa', 'user4', 'qwerty', 'user4@mail.com'),
+(8, '2dbd94c82b7196c1f22afd39a5c79231', 'user5', 'qwerty', 'user5@mail.com');
+
+ALTER TABLE donelist
+  ADD PRIMARY KEY (list_id);
+  
+ALTER TABLE user
+  ADD PRIMARY KEY (user_id);
+
+ALTER TABLE donelist
+  MODIFY list_id cast(5 as int) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  
+ALTER TABLE user
+  MODIFY user_id cast(5 as int) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+COMMIT;

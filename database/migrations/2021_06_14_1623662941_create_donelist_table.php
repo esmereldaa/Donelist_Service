@@ -10,15 +10,12 @@ class CreateDonelistTable extends Migration
     {
         Schema::create('donelist', function (Blueprint $table) {
 
-		$table->integer('list_id',5);
+        $table->increments('list_id')->start_from(10);
 		$table->integer('user_id',5);
 		$table->string('task_data');
 		$table->datetime('date');
 
         });
-
-        
-        DB::statement('ALTER TABLE donelist AUTO_INCREMENT = 10;');
     }
 
     public function down()

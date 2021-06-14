@@ -18,12 +18,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::group(['prefix' => 'v1'], function () {
-    Route::get('/getData', 'App\Http\Controllers\DatalistController@alldatalist');
-    Route::post('/createAccount', 'App\Http\Controllers\DatalistController@createAccount');
-    Route::post('/login', 'App\Http\Controllers\DatalistController@login');
+    Route::get('/getData', 'DatalistController@alldatalist');
+    Route::post('/createAccount', 'DatalistController@createAccount');
+    Route::post('/login', 'DatalistController@login');
     Route::group(['prefix' => '{token}'], function () {
-        Route::get('/getData', 'App\Http\Controllers\DatalistController@getData');
-        Route::get('/getUser', 'App\Http\Controllers\DatalistController@getUser');
-        Route::post('/setData', 'App\Http\Controllers\DatalistController@setData');
+        Route::get('/getData', 'DatalistController@getData');
+        Route::get('/getUser', 'DatalistController@getUser');
+        Route::post('/setData', 'DatalistController@setData');
     });
 });

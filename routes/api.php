@@ -6,6 +6,7 @@ use App\Http\Controllers\DatalistController;
 
 use App\Models\DataListModel;
 use App\Models\User;
+use App\Models\DatalistControllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::group(['prefix' => 'v1'], function () {
         $datas = User::all();
         return response($datas);
     });
+    Route::get('getData3', [DatalistControllers::class, 'alldatalist']);
     Route::post('createAccount', 'DatalistController@createAccount');
     Route::post('login', 'DatalistController@login');
     Route::group(['prefix' => '{token}'], function () {

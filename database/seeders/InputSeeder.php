@@ -14,13 +14,13 @@ class InputSeeder extends Seeder
      */
     public function run()
     {
-        // \DB::table('user')->insert([
-        // 	'user_id' => 1,
-        // 	'token' => 'd947e8d2d34b1df805ec72916ab6cf90',
-        // 	'uname' => 'Luthfi',
-        // 	'password' => 'password',
-        //     'email' => 'luthfi@mail.com'
-        // ]);
+        \DB::table('user')->insert([
+        	'user_id' => 2,
+        	'token' => 'd947e8d2d34b1df805ec72916ab6cf90',
+        	'uname' => 'Luthfi',
+        	'password' => 'password2',
+            'email' => 'luthfi@mail.com'
+        ]);
 
         \DB::table('donelist')->insert([
         	'list_id' => 1,

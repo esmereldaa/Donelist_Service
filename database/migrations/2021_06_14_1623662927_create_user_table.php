@@ -10,7 +10,7 @@ class CreateUserTable extends Migration
     {
         Schema::create('user', function (Blueprint $table) {
 
-		$table->integer('user_id',5)->primary();;
+		$table->integer('user_id',5)->primary();
 		$table->string('token',100)->nullable()->default('NULL');
 		$table->string('uname',50);
 		$table->string('password',50);

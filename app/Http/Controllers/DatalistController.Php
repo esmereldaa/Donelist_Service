@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\BaseController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,7 +11,7 @@ use Illuminate\Support\Str;
 use App\Models\DataListModel;
 use App\Models\User;
 
-class DatalistController extends Controller{
+class DatalistController extends BaseController{
 
     public function alldatalist(){
         $datas = User::all();

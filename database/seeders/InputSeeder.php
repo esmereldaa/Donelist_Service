@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class InputSeeder extends Seeder
 {
@@ -13,7 +14,7 @@ class InputSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('user')->insert([
+        \DB::table('user')->insert([
         	'user_id' => 1,
         	'token' => 'd947e8d2d34b1df805ec72916ab6cf90',
         	'uname' => 'Luthfi',
@@ -21,7 +22,7 @@ class InputSeeder extends Seeder
             'email' => 'luthfi@mail.com'
         ]);
 
-        DB::table('donelist')->insert([
+        \DB::table('donelist')->insert([
         	'list_id' => 1,
         	'user_id' => 1,
         	'task_data' => 'creating project',

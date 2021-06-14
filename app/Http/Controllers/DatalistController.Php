@@ -1,7 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\BaseController;
+
+use Illuminate\Routing\Controller as BaseController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

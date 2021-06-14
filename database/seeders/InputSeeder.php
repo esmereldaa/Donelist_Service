@@ -26,7 +26,7 @@ class InputSeeder extends Seeder
         	'list_id' => 1,
         	'user_id' => 1,
         	'task_data' => 'creating project',
-        	'password' => '2021-05-28 14:52:46'
+        	'date' => '2021-05-28 14:52:46'
         ]);
     }
 }

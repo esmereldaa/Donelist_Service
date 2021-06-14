@@ -4,6 +4,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DatalistController;
 
+use App\Models\DataListModel;
+use App\Models\User;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,7 +23,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::group(['prefix' => 'v1'], function () {
     Route::get('getData', 'DatalistController@alldatalist');
-    Route::get('getData2', [DatalistController::class, 'alldatalist']);
+    Route::get('getData2', function(){
+        $datas = User::all();
+        return response($datas);
+    });
     Route::post('createAccount', 'DatalistController@createAccount');
     Route::post('login', 'DatalistController@login');
     Route::group(['prefix' => '{token}'], function () {

@@ -10,7 +10,7 @@ class CreateDonelistTable extends Migration
     {
         Schema::create('donelist', function (Blueprint $table) {
 
-		$table->integer('list_id',5)->primary();;
+		$table->integer('list_id',5);
 		$table->integer('user_id',5);
 		$table->string('task_data');
 		$table->datetime('date');
